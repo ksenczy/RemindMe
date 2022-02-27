@@ -5,7 +5,6 @@
 #
 #
 #TO DO LIST
-#Matt Photo and Info Bottom Right of Home Screen
 #Make the pop ups work
 #Attempt to fix the Button sizes on the Menu screen
 
@@ -79,7 +78,7 @@ def Homescreen():
     #Setting New BG Logo
     bgLogo2 = Image.open(holder + "\BG Logo2.png")
     temp = ImageTk.PhotoImage(bgLogo2)
-    bgImagelabel2 = Label(homeWindow, image = temp, background = brown).place(x=1500, y=50)
+    bgImagelabel2 = Label(homeWindow, image = temp, background = brown).place(x=1550, y=50)
 
     #Setting up Event Block dates
     marchFifteenth = Label(homeWindow, text= "March 15th 2022", background = brown, foreground = "white", font=fontSettings).place(x=825, y=150)
@@ -183,6 +182,12 @@ def Homescreen():
     coverLabel3 = Label(text= "T", background = brown, foreground = brown, font = eventFont).place(x=100, y=55)
     coverLabel4 = Label(text= "T", background = brown, foreground = brown, font = eventFont).place(x=25, y=55)
 
+    #Matts photo and user stuff
+    mattPic = Image.open(holder + "\Matthew.png")
+    mattPicAnchor = ImageTk.PhotoImage(mattPic)
+    MattLabel1 = Label(image = mattPicAnchor).place(x = 1600, y = 700)
+    MattLabel2 = Label(text = "Matthew Lake",background = brown, foreground = "white", font = fontSettings).place(x = 1620, y = 980)
+    MattLabel3 = Label(text = "mrlake@bgsu.edu", background = brown, foreground = "white", font = fontSettings).place(x = 1620, y = 1020)
     #again, this must be at the bottom of the Homescreen function to
     #make sure that things work
     #notably, photos dont work without this
@@ -227,16 +232,16 @@ def menuExtended(homeWindow):
 
 
     #Adding Buttons to the Frame for each menu option
-    createEventBtn = Button(menu, image = createEventImgAnchor, command = lambda : createEvent(False, homeWindow), text = "Create Event").place(x=50, y=150)
-    deleteEventBtn = Button(menu, image = deleteEventImgAnchor, command = deleteEvent, text = "Delete Event").place(x=50, y=190)
-    updateEventBtn = Button(menu, image = updateEventImgAnchor, command = lambda : createEvent(True, homeWindow), text = "Update Event").place(x=50, y=230)
-    searchEventBtn = Button(menu, image = searchEventImgAnchor, command = searchEvent, text = "Search").place(x=50, y=270)
-    shareBtn = Button(menu, image = shareEventImgAnchor, command = shareEvent, text = "Share").place(x=50, y=310)
-    sharedWithMeEventBtn = Button(menu, image = sharedWithEventImgAnchor, command = sharedWithMe, text = "Shared with me").place(x=50, y=350)
-    organizationsBtn = Button(menu, image = organizationsEventImgAnchor, command = organizations, text = "Organizations").place(x=50, y=390)
-    holidaysBtn = Button(menu, image = holidaysEventImgAnchor, command = holidays, text = "Holidays").place(x=50, y=430)
-    filterBtn = Button(menu, image = filtersEventImgAnchor, command = filters, text = "Filter").place(x=50, y=470)
-    settingsBtn = Button(menu, image = settingsEventImgAnchor, command = settings, text = "Settings").place(x=50, y=510)
+    createEventBtn = Button(menu, image = createEventImgAnchor, command = lambda : createEvent(False, homeWindow)).place(x=30, y=150)
+    deleteEventBtn = Button(menu, image = deleteEventImgAnchor, command = deleteEvent).place(x=30, y=230)
+    updateEventBtn = Button(menu, image = updateEventImgAnchor, command = lambda : createEvent(True, homeWindow)).place(x=30, y=310)
+    searchEventBtn = Button(menu, image = searchEventImgAnchor, command = searchEvent).place(x=30, y=390)
+    shareBtn = Button(menu, image = shareEventImgAnchor, command = shareEvent).place(x=30, y=470)
+    sharedWithMeEventBtn = Button(menu, image = sharedWithEventImgAnchor, command = sharedWithMe).place(x=30, y=550)
+    organizationsBtn = Button(menu, image = organizationsEventImgAnchor, command = organizations).place(x=30, y=630)
+    holidaysBtn = Button(menu, image = holidaysEventImgAnchor, command = holidays).place(x=30, y=710)
+    filterBtn = Button(menu, image = filtersEventImgAnchor, command = filters).place(x=30, y=790)
+    settingsBtn = Button(menu, image = settingsEventImgAnchor, command = settings).place(x=30, y=870)
 
     #Rebuilding the hamburger Button, clicking the hamburger button again destroys the frame and its contents
     hamburger = Image.open(holder + "\HB Button.png")
