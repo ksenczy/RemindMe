@@ -200,17 +200,43 @@ def menuExtended(homeWindow):
     menu.config()
     menu.place(x=0,y=0, width = 400, height = 1080)
 
+
+    #Setting up Button images
+    createEventImg = Image.open(holder + "\Create EventBtn.png")
+    createEventImgAnchor = ImageTk.PhotoImage(createEventImg)
+    deleteEventImg = Image.open(holder + "\Delete Event.png")
+    deleteEventImgAnchor = ImageTk.PhotoImage(deleteEventImg)
+    updateEventImg = Image.open(holder + "\TUpdate Event.png")
+    updateEventImgAnchor = ImageTk.PhotoImage(updateEventImg)
+    searchEventImg = Image.open(holder + "\Search Event.png")
+    searchEventImgAnchor = ImageTk.PhotoImage(searchEventImg)
+    shareEventImg = Image.open(holder + "\Share Event.png")
+    shareEventImgAnchor = ImageTk.PhotoImage(shareEventImg)
+    sharedWithEventImg = Image.open(holder + "\Shared With Me.png")
+    sharedWithEventImgAnchor = ImageTk.PhotoImage(sharedWithEventImg)
+    organizationsEventImg = Image.open(holder + "\Organizations.png")
+    organizationsEventImgAnchor = ImageTk.PhotoImage(organizationsEventImg)
+    holidaysEventImg = Image.open(holder + "\Holidays.png")
+    holidaysEventImgAnchor = ImageTk.PhotoImage(holidaysEventImg)
+    filtersEventImg = Image.open(holder + "\Filter.png")
+    filtersEventImgAnchor = ImageTk.PhotoImage(filtersEventImg)
+    settingsEventImg = Image.open(holder + "\Settings.png")
+    settingsEventImgAnchor = ImageTk.PhotoImage(settingsEventImg)
+
+
+
+
     #Adding Buttons to the Frame for each menu option
-    createEventBtn = Button(menu, command = createEvent, text = "Create Event").place(x=50, y=150)
-    deleteEventBtn = Button(menu, command = deleteEvent, text = "Delete Event").place(x=50, y=190)
-    updateEventBtn = Button(menu, command = updateEvent, text = "Update Event").place(x=50, y=230)
-    searchEventBtn = Button(menu, command = searchEvent, text = "Search").place(x=50, y=270)
-    shareBtn = Button(menu, command = shareEvent, text = "Share").place(x=50, y=310)
-    sharedWithMeEventBtn = Button(menu, command = sharedWithMe, text = "Shared with me").place(x=50, y=350)
-    organizationsBtn = Button(menu, command = organizations, text = "Organizations").place(x=50, y=390)
-    holidaysBtn = Button(menu, command = holidays, text = "Holidays").place(x=50, y=430)
-    filterBtn = Button(menu, command = filters, text = "Filter").place(x=50, y=470)
-    settingsBtn = Button(menu, command = settings, text = "Settings").place(x=50, y=510)
+    createEventBtn = Button(menu, image = createEventImgAnchor, command = lambda : createEvent(False, homeWindow), text = "Create Event").place(x=50, y=150)
+    deleteEventBtn = Button(menu, image = deleteEventImgAnchor, command = deleteEvent, text = "Delete Event").place(x=50, y=190)
+    updateEventBtn = Button(menu, image = updateEventImgAnchor, command = lambda : createEvent(True, homeWindow), text = "Update Event").place(x=50, y=230)
+    searchEventBtn = Button(menu, image = searchEventImgAnchor, command = searchEvent, text = "Search").place(x=50, y=270)
+    shareBtn = Button(menu, image = shareEventImgAnchor, command = shareEvent, text = "Share").place(x=50, y=310)
+    sharedWithMeEventBtn = Button(menu, image = sharedWithEventImgAnchor, command = sharedWithMe, text = "Shared with me").place(x=50, y=350)
+    organizationsBtn = Button(menu, image = organizationsEventImgAnchor, command = organizations, text = "Organizations").place(x=50, y=390)
+    holidaysBtn = Button(menu, image = holidaysEventImgAnchor, command = holidays, text = "Holidays").place(x=50, y=430)
+    filterBtn = Button(menu, image = filtersEventImgAnchor, command = filters, text = "Filter").place(x=50, y=470)
+    settingsBtn = Button(menu, image = settingsEventImgAnchor, command = settings, text = "Settings").place(x=50, y=510)
 
     #Rebuilding the hamburger Button, clicking the hamburger button again destroys the frame and its contents
     hamburger = Image.open(holder + "\HB Button.png")
@@ -226,20 +252,44 @@ def menuExtended(homeWindow):
     #Image purposes
     homeWindow.mainloop()
 
-#Function definition for Create Event pop up
-def createEvent():
-    garbage = 0
+#Function definition for Create Event pop up or Update Event
+def createEvent(isUpdateFunction, homeWindow):
+
+    #This is so we only have to use one function for both create and update
+    if(isUpdateFunction):
+        labelWords = "Update Event"
+        searchEvent("U")
+    else:
+        labelWords = "Create Event"
+
+    #Setting up the popup window
+    popUp = Tk()
+    popUp.title(labelWords)
+    popUp.geometry('800x700')
+    popUp.configure(bg=brown)
+
+    #Setting up the top logo
+    topLogo = Label(popUp, text = labelWords, font=eventFont, background = brown, foreground = orange).place(x=300, y=50)
+
+
+
+
+    buttonImage = Image.open(holder + "\Press Button.png")
+    buttonImageAnchor = ImageTk.PhotoImage(buttonImage)
+
+
 
 #Function def for delete event pop up
 def deleteEvent():
     garbage = 0
 
-#function def for updating event
-def updateEvent():
-    garbage = 0
-
 #function def for searching for an event
-def searchEvent():
+def searchEvent(whatDo):
+
+    #For update event pop up
+    if (whatDo == "U"):
+        garbage = 0
+
     garbage = 0
 
 #function def for sharing an event
