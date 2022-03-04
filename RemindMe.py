@@ -45,15 +45,7 @@ eventCalendar = []
 isFiltered = [False, False, False, False, False, False, False, False]
 
 
-#This Checks the date to make sure that the first one isnt expired. This can be safely removed after testing
-if datetime.now() < datetime(2022, 3, 15, 15, 30):
-    eventCalendar.append(events("CS 4120", datetime(2022, 2, 28, 23, 55),"",2,False,0))
-    eventCalendar.append(events("HIST 3014 Essay", datetime(2022, 3, 10, 20, 0),"",0,False,2))
-    eventCalendar.append(events("Bryce's Wedding", datetime(2022, 8, 20, 6, 30),"",0,False,4))
-    eventCalendar.append(events("Bryce's Wedding", datetime(2022, 2, 28, 20, 30),"",0,False,4))
-    eventCalendar.append(events("Bryce's Wedding", datetime(2022, 10, 31, 20, 30),"",0,False,4))
-    eventCalendar.append(events("Bryce's Wedding", datetime(2022, 5, 31, 20, 30),"",0,False,4))
-    eventCalendar.append(events("Bryce's Wedding", datetime(2022, 7, 31, 20, 30),"",0,False,4))
+eventCalendar.append(events("Bryce's Wedding", datetime(2022, 8, 20, 20, 30),"",0,False,4))
 
 
 #This will be where the window changes from Login to the Home Screen
