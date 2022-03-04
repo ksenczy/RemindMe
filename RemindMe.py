@@ -213,7 +213,6 @@ def agendaFrame(homeWindow):
     ySetting = ySetting + 80
     refreshInfo = Button(agenda, text = "Refresh", command = lambda : deleteAgendaFrame(homeWindow)).place(x=425, y = ySetting)
 
-
 #Function takes a datetime variable
 #Function returns a string that states the date in words
 def correctDates(currentDate):
@@ -226,7 +225,6 @@ def correctDates(currentDate):
     dateName = dateName + " " + str(currentDate.day) + " " + str(currentDate.year)
 
     return dateName
-
 
 #This function sorts the list of events in the calendar.
 #It also removes events that are past due
@@ -291,6 +289,54 @@ def menuExtended(homeWindow):
     holidaysBtn = Button(menu, image = holidaysEventImgAnchor, command = lambda : holidays(homeWindow)).place(x=30, y=710)
     filterBtn = Button(menu, image = filtersEventImgAnchor, command = lambda : filters(homeWindow)).place(x=30, y=790)
     settingsBtn = Button(menu, image = settingsEventImgAnchor, command = settings).place(x=30, y=870)
+
+
+    #Setting up cover ups to hide the button outlines
+    coveringIt1 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=140)
+    coveringIt2 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=220)
+    coveringIt3 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=300)
+    coveringIt4 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=380)
+    coveringIt5 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=460)
+    coveringIt6 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=540)
+    coveringIt7 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=620)
+    coveringIt8 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=700)
+    coveringIt9 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=780)
+    coveringIt10 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=860)
+
+    coveringIt11 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=213)
+    coveringIt11 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=290)
+    coveringIt11 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=369)
+    coveringIt11 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=451)
+    coveringIt11 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=530)
+    coveringIt11 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=610)
+    coveringIt11 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=690)
+    coveringIt11 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=771)
+    coveringIt11 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=851)
+    coveringIt11 = Label(menu, text="This is stupidfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", background = brown, foreground = brown).place(x=30, y=932)
+
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=10, y=150)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=10, y=230)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=10, y=310)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=10, y=390)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=10, y=470)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=10, y=550)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=10, y=630)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=10, y=710)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=10, y=790)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=10, y=870)
+
+
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=325, y=150)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=325, y=230)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=325, y=310)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=325, y=390)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=325, y=470)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=325, y=550)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=325, y=630)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=325, y=710)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=325, y=790)
+    coveringIt11 = Label(menu, text="F", background = brown, foreground = brown, font = ("Times New Romans", 40)).place(x=325, y=870)
+
 
     #Rebuilding the hamburger Button, clicking the hamburger button again destroys the frame and its contents
     hamburger = Image.open(holder + "\HB Button.png")
