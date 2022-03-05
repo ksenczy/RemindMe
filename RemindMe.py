@@ -1224,7 +1224,7 @@ def filters(homeWindow):
     quiz.place(x=260, y=125)
     personal = Checkbutton(popUp, variable = chk5, offvalue = 0, onvalue = 1, text = "Personal")
     personal.place(x=140, y=150)
-    holiday = Checkbutton(popUp, variable = chk6, offvalue = 0, onvalue = 1, text = "Holiday")
+    holiday = Checkbutton(popUp, variable = chk6, offvalue = 0, onvalue = 1, text = "Holidays")
     holiday.place(x=260, y=150)
     other = Checkbutton(popUp, variable = chk7, offvalue = 0, onvalue = 1, text = "Other")
     other.place(x=220, y=175)
