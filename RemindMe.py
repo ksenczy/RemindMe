@@ -45,7 +45,7 @@ eventCalendar = []
 isFiltered = [False, False, False, False, False, False, False, False]
 
 
-eventCalendar.append(events("Bryce's Wedding", datetime(2022, 8, 20, 20, 30),"",0,False,4))
+eventCalendar.append(events("CS 4390", datetime(2022, 5, 25, 20, 30),"",0,False,4))
 
 
 #This will be where the window changes from Login to the Home Screen
@@ -929,7 +929,7 @@ def searchEvent(isShare, popUp, nameToFind, year, month, day):
             emailBait.insert(0, "Email To Share To")
             emailBait.place(x=260, y=ySetting)
             ySetting = ySetting + 30
-            giveUp = Button(coverUp, text = "Share Event", command = lambda : deletePopUp(popUp), width = 15).place(x=375, y=ySetting)
+            giveUp = Button(coverUp, text = "Share Event", command = lambda : shareConfirmed(popUp, coverUp, emailBait.get()), width = 15).place(x=375, y=ySetting)
             finalBtn = Button(coverUp, text= "Search Again", command = lambda : deleteFrames(coverUp), width = 15).place(x=225, y =ySetting)
         else:
             giveUp = Button(coverUp, text = "End Search", command = lambda : deletePopUp(popUp), width = 15).place(x=375, y=ySetting)
@@ -961,6 +961,28 @@ def searchEvent(isShare, popUp, nameToFind, year, month, day):
         #give up ends search, final button causes recursion
         giveUp = Button(coverUp, text = "Cancel Search", command = lambda : deletePopUp(popUp), width = 15).place(x=375, y=250)
         finalBtn = Button(coverUp, text= "Try Again", command = lambda : searchEvent(isShare, popUp, nameSearchEntry.get(), dateSearchEntry3.get(), dateSearchEntry1.get(), dateSearchEntry2.get()), width = 15).place(x=225, y =250)
+
+def shareConfirmed(popUp, coverUp, emailToShare):
+    #Setting Frame Style so that it can take a bg color
+    s = Style()
+    s.configure('My.TFrame', background=brown)
+    #Setting up the frame
+    secondCover=Frame(popUp, style='My.TFrame')
+    secondCover.config()
+    secondCover.place(x=0,y=0, width = 700, height = 450)
+
+    #This is used to cover the frame with brown
+    coverLbl = Label(secondCover, text = "NICE", font = ("Times New Roman", 1000), foreground = brown, background = brown).place(x=0,y=0)
+
+    textVar = "Event Successfully shared to " + emailToShare
+
+    txtLabel = Label(secondCover, text = textVar, font = fontSettings, foreground = orange, background = brown).place(x=25, y = 100)
+
+    exitBtn = Button(secondCover, text = "Exit", command = lambda : deletePopUp(popUp)).place(x= 300, y = 300)
+
+    popUp.mainloop()
+
+
 
 #function def for shared with me events
 def sharedWithMe(homeWindow):
@@ -1145,33 +1167,33 @@ def holidays(homeWindow):
 #This function adds the correct holiday to the event calendar
 def holidayAdd(homeWindow, popUp, christian, hindu, taoist, islam, judaism, buddhism, sikhism, usa, india, china, saudiArabia, canada, mexico, uk):
     if christian == 1:
-        eventCalendar.append(events("Easter", datetime(2022, 4, 17, 4, 30), "", 0, False, 6))
+        eventCalendar.append(events("Easter", datetime(2022, 4, 17, 4, 30), "", 0, False, 5))
     if hindu == 1:
-        eventCalendar.append(events("Diwali", datetime(2022, 10, 24, 4, 30), "", 0, False, 6))
+        eventCalendar.append(events("Diwali", datetime(2022, 10, 24, 4, 30), "", 0, False, 5))
     if taoist == 1:
-        eventCalendar.append(events("Chinese New Year", datetime(2023, 1, 22, 4, 30), "", 0, False, 6))
+        eventCalendar.append(events("Chinese New Year", datetime(2023, 1, 22, 4, 30), "", 0, False, 5))
     if islam == 1:
-        eventCalendar.append(events("Ramadan Begins", datetime(2022, 4, 23, 4, 30), "", 0, False, 6))
+        eventCalendar.append(events("Ramadan Begins", datetime(2022, 4, 23, 4, 30), "", 0, False, 5))
     if judaism == 1:
-        eventCalendar.append(events("Passover", datetime(2022, 4, 15, 4, 30), "", 0, False, 6))
+        eventCalendar.append(events("Passover", datetime(2022, 4, 15, 4, 30), "", 0, False, 5))
     if buddhism == 1:
-        eventCalendar.append(events("Vesak", datetime(2022, 5, 6, 4, 30), "", 0, False, 6))
+        eventCalendar.append(events("Vesak", datetime(2022, 5, 6, 4, 30), "", 0, False, 5))
     if sikhism == 1:
-        eventCalendar.append(events("Vaisakhi", datetime(2022, 4, 14, 4, 30), "", 0, False, 6))
+        eventCalendar.append(events("Vaisakhi", datetime(2022, 4, 14, 4, 30), "", 0, False, 5))
     if usa == 1:
-        eventCalendar.append(events("Thanksgiving", datetime(2022, 11, 24, 4, 30), "", 0, False, 6))
+        eventCalendar.append(events("Thanksgiving", datetime(2022, 11, 24, 4, 30), "", 0, False, 5))
     if india == 1:
-        eventCalendar.append(events("Holi", datetime(2022, 3, 18, 4, 30), "", 0, False, 6))
+        eventCalendar.append(events("Holi", datetime(2022, 3, 18, 4, 30), "", 0, False, 5))
     if china == 1:
-        eventCalendar.append(events("Lantern Festival", datetime(2023, 2, 5, 4, 30), "", 0, False, 6))
+        eventCalendar.append(events("Lantern Festival", datetime(2023, 2, 5, 4, 30), "", 0, False, 5))
     if saudiArabia == 1:
-        eventCalendar.append(events("Eid al-Fitr", datetime(2022, 5, 2, 4, 30), "", 0, False, 6))
+        eventCalendar.append(events("Eid al-Fitr", datetime(2022, 5, 2, 4, 30), "", 0, False, 5))
     if canada == 1:
-        eventCalendar.append(events("Boxing Day", datetime(2022, 12, 26, 4, 30), "", 0, False, 6))
+        eventCalendar.append(events("Boxing Day", datetime(2022, 12, 26, 4, 30), "", 0, False, 5))
     if mexico == 1:
-        eventCalendar.append(events("Dia de la Independence", datetime(2022, 9, 16, 4, 30), "", 0, False, 6))
+        eventCalendar.append(events("Dia de la Independence", datetime(2022, 9, 16, 4, 30), "", 0, False, 5))
     if uk == 1:
-        eventCalendar.append(events("The Queen's Birthday", datetime(2022, 6, 11, 4, 30), "", 0, False, 6))
+        eventCalendar.append(events("The Queen's Birthday", datetime(2022, 6, 11, 4, 30), "", 0, False, 5))
 
 
     deletePopUp(popUp)
@@ -1283,7 +1305,7 @@ def settings():
     holidayLabel = Label(popUp, text = "Settings", font=eventFont, background = orange, width = 15, anchor = CENTER).place(x=75, y=20)
 
     chk1 = IntVar(popUp)
-    darkMode = Checkbutton(popUp, text = "Dark Mode", offvalue = 0, onvalue = 1, variable = chk1)
+    darkMode = Checkbutton(popUp, text = "Light Mode", offvalue = 0, onvalue = 1, variable = chk1)
     darkMode.place(x=225, y=100)
 
     explain = Label(popUp, text = "When Do you want Notifications to Occur?", font = timeFont, background = brown, foreground = orange).place(x=40, y=150)
