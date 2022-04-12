@@ -45,7 +45,9 @@ eventCalendar = []
 isFiltered = [False, False, False, False, False, False, False, False]
 
 
-eventCalendar.append(events("CS 4390", datetime(2022, 5, 25, 20, 30),"",0,False,4))
+eventCalendar.append(events("Date with Erica", datetime(2022, 5, 1, 20, 30),"",0,False,4))
+eventCalendar.append(events("Graduation", datetime(2022, 5, 26, 20, 30),"",0,False,4))
+eventCalendar.append(events("CS3240 Final Exam", datetime(2022, 5, 3, 20, 30),"",0,False,4))
 
 
 #This will be where the window changes from Login to the Home Screen
@@ -1184,6 +1186,7 @@ def holidayAdd(homeWindow, popUp, christian, hindu, taoist, islam, judaism, budd
         eventCalendar.append(events("Thanksgiving", datetime(2022, 11, 24, 4, 30), "", 0, False, 5))
     if india == 1:
         eventCalendar.append(events("Holi", datetime(2022, 3, 18, 4, 30), "", 0, False, 5))
+        print(eventCalendar[-1].eventName)
     if china == 1:
         eventCalendar.append(events("Lantern Festival", datetime(2023, 2, 5, 4, 30), "", 0, False, 5))
     if saudiArabia == 1:
